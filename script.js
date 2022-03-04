@@ -8,6 +8,13 @@ let CB = 0.1;
 canvas.width = countBlock * sizeBlock;
 canvas.height = countBlock * sizeBlock;
 
+function start () {
+
+    for(let h = 0; h < countBlock; h++) {
+        
+    }
+}
+
 function draw() {
 
     ctx.fillStyle = "#222";

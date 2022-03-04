@@ -11,7 +11,12 @@ canvas.height = countBlock * sizeBlock;
 function start () {
 
     for(let h = 0; h < countBlock; h++) {
-        
+
+        let wline = Array();
+        for(let w = 0; w < countBlock; w ++) {
+            
+        }
+
     }
 }
 

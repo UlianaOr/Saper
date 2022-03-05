@@ -10,6 +10,13 @@ let blocks = Array();
 canvas.width = countBlock * sizeBlock;
 canvas.height = countBlock * sizeBlock;
 
+function plus(h,w) {
+
+    if(h >=0 && h <= countBlock -1 && w >= 0 && w < countBlock -1) {
+        if
+    }
+}
+
 function start () {
 
     for(let h = 0; h < countBlock; h++) {

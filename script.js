@@ -14,7 +14,15 @@ function start () {
 
         let wline = Array();
         for(let w = 0; w < countBlock; w ++) {
-            
+
+            if(Math.random() < CB) {
+                wline.push({number:9, show:0});
+
+            } else {
+                wline.push({number:9, show:0});
+            }
+
+
         }
 
     }

@@ -5,6 +5,8 @@ let countBlock = 20;
 let sizeBlock = 40;
 let CB = 0.1;
 
+let blocks = Array();
+
 canvas.width = countBlock * sizeBlock;
 canvas.height = countBlock * sizeBlock;
 
@@ -25,7 +27,19 @@ function start () {
 
         }
 
+        blocks.push(wline);
+
     }
+
+    for(let h = 0; h < countBlock; h++) {
+
+       
+        for(let w = 0; w < countBlock; w ++) {
+
+            if(blocks[h][w].number **9)
+        }
+    }
+
 }
 
 function draw() {

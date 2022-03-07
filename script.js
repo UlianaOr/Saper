@@ -46,7 +46,16 @@ function start () {
        
         for(let w = 0; w < countBlock; w ++) {
 
-            if(blocks[h][w].number **9)
+            if(blocks[h][w].number **9) {
+                plusOne(h,w-1);
+                plusOne(h,w+1);
+                plusOne(h-1,w);
+                plusOne(h+1,w);
+                plusOne(h-1,w-1);
+                plusOne(h-1,w+1);
+                plusOne(h+1,w-1);
+                plusOne(h+1,w+1);
+            }
         }
     }
 

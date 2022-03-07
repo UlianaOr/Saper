@@ -13,7 +13,10 @@ canvas.height = countBlock * sizeBlock;
 function plus(h,w) {
 
     if(h >=0 && h <= countBlock -1 && w >= 0 && w < countBlock -1) {
-        if
+        if(blocks[h][w].number != 9) {
+            blocks[h][w]. number ++;
+
+        }
     }
 }
 

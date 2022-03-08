@@ -60,12 +60,35 @@ function start () {
         }
     }
 
+    game = true;
+
 }
 
 function draw() {
 
     ctx.fillStyle = "#222";
     ctx.fillRect(0,0,canvas.width, canvas.height);
+
+    for(let h = 0; h < countBlock; h++) {
+
+       
+        for(let w = 0; w < countBlock; w ++) {
+            
+            if (blocks[h][w].show) {
+
+                if(blocks[h][w].number == 9) {
+
+                    ctx.beginPath();
+                    ctx.fillStyle = "#f00";
+                    ctx.arc(w*sizeBlock+sizeBlock/2,h*sizeBlock+sizeBlock/2,)
+
+                    continue;
+
+                }
+
+            }
+    }
+}
 
     for(let t = 0; t < countBlock + 1; t++) {
         ctx.strokeStyle = "#fff";

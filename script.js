@@ -94,8 +94,8 @@ function draw() {
 
                     ctx.font = "32px serif";
                     ctx.fillStyle = "#ddd";
-                    ctx.fillText(blocks[h][x].number, w*sizeBlock, (h+1)*sizeBlock);
-                    
+                    ctx.fillText(blocks[h][x].number, w*sizeBlock +10, (h+1)*sizeBlock -10);
+
                 }
 
 
@@ -116,3 +116,20 @@ function draw() {
         ctx.stroke();
     }
 }
+
+setInterval(draw,25);
+
+canvas.addEventListener('mousedown',function(event){
+
+    if(!game) {
+        start();
+    }
+
+    let h = Math.floor((event.clientY/sizeBlock));
+    let w = Math.floor((event.clientX/sizeBlock));
+
+    if (blocks[h][w].number == 9) {
+        console.log('lose');
+        game = false;
+    }
+});

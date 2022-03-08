@@ -4,6 +4,7 @@ let ctx = canvas.getContex("2d");
 let countBlock = 20;
 let sizeBlock = 40;
 let CB = 0.1;
+let game = false;
 
 let blocks = Array();
 
@@ -69,6 +70,13 @@ function draw() {
     for(let t = 0; t < countBlock + 1; t++) {
         ctx.strokeStyle = "#fff";
         ctx.beginPath();
-        ctx.moveTo(canvas.width,t * sizeBlock);
+        ctx.moveTo(0,t * sizeBlock);
+        ctx.lineTo(canvas.width,t * sizeBlock);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(t * sizeBlock,0);
+        ctx.lineTo(t * sizeBlock,canvas.height);
+        ctx.stroke();
     }
 }

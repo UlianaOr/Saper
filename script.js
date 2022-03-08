@@ -80,11 +80,24 @@ function draw() {
 
                     ctx.beginPath();
                     ctx.fillStyle = "#f00";
-                    ctx.arc(w*sizeBlock+sizeBlock/2,h*sizeBlock+sizeBlock/2,)
+                    ctx.arc(w*sizeBlock+sizeBlock/2,h*sizeBlock+sizeBlock/2,sizeBlock/3,0,2*Math.PI,true);
+                    ctx.fill();
 
                     continue;
 
                 }
+
+                ctx.fillStyle = "#555";
+                ctx.fillRect(w*sizeBlock,h*sizeBlock,sizeBlock,sizeBlock);
+
+                if(blocks[h][w].number) {
+
+                    ctx.font = "32px serif";
+                    ctx.fillStyle = "#ddd";
+                    ctx.fillText(blocks[h][x].number, w*sizeBlock, (h+1)*sizeBlock);
+                    
+                }
+
 
             }
     }

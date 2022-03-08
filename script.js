@@ -65,4 +65,10 @@ function draw() {
 
     ctx.fillStyle = "#222";
     ctx.fillRect(0,0,canvas.width, canvas.height);
+
+    for(let t = 0; t < countBlock + 1; t++) {
+        ctx.strokeStyle = "#fff";
+        ctx.beginPath();
+        ctx.moveTo(canvas.width,t * sizeBlock);
+    }
 }

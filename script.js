@@ -21,12 +21,19 @@ function plus(h,w) {
     }
 }
 
-function start () {
+function start (sh,sw) {
+
+    blocks = Array();
 
     for(let h = 0; h < countBlock; h++) {
 
         let wline = Array();
         for(let w = 0; w < countBlock; w ++) {
+
+            if(h == sh && w == sw) {
+                wline.push({number:9, show:0});
+                continue;
+            }
 
             if(Math.random() < CB) {
                 wline.push({number:9, show:0});
@@ -69,10 +76,10 @@ function draw() {
     ctx.fillStyle = "#222";
     ctx.fillRect(0,0,canvas.width, canvas.height);
 
-    for(let h = 0; h < countBlock; h++) {
+    for(let h = 0; h < blocks.length; h++) {
 
        
-        for(let w = 0; w < countBlock; w ++) {
+        for(let w = 0; w < blocks[h].length; w ++) {
             
             if (blocks[h][w].show) {
 
@@ -121,15 +128,47 @@ setInterval(draw,25);
 
 canvas.addEventListener('mousedown',function(event){
 
-    if(!game) {
-        start();
-    }
+    
 
     let h = Math.floor((event.clientY/sizeBlock));
     let w = Math.floor((event.clientX/sizeBlock));
+
+    
+    if(!game) {
+        start(h,w);
+    }
+
 
     if (blocks[h][w].number == 9) {
         console.log('lose');
         game = false;
     }
+
+    showBlock(h,w);
+
 });
+
+function showBlock(h,w) {
+
+
+    blocks[h][w].show = 1;
+
+    if (blocks[h][w].number != 0) {
+        return;
+    }
+
+    checkZero(h,w-1);
+    checkZero(h,w+1);
+    checkZero(h-1,w);
+    checkZero(h+1,w);
+}
+
+function checkZero(h,w) {
+
+    if(h >=0 && h <= countBlock -1 && w >= 0 && w < countBlock -1) {
+        if(!blocks[h][w].show) {
+            showBlock(h,w);
+        }
+    }
+
+}
